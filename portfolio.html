@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Kulipoe | Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Portfolio Background Images - All 7 Tiles */
+        .portfolio-img-1 {
+            background: 
+                linear-gradient(45deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+                url('assets/images/Network-Infrastructure.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .portfolio-img-2 {
+            background: 
+                linear-gradient(45deg, rgba(240, 147, 251, 0.8), rgba(245, 87, 108, 0.8)),
+                url('assets/images/Colud-Migration.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .portfolio-img-3 {
+            background: 
+                linear-gradient(45deg, rgba(79, 172, 254, 0.8), rgba(0, 242, 254, 0.8)),
+                url('assets/images/Cybersecurity.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .portfolio-img-4 {
+            background: 
+                linear-gradient(45deg, rgba(67, 233, 123, 0.8), rgba(56, 249, 215, 0.8)),
+                url('assets/images/Data-Center.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .portfolio-img-5 {
+            background: 
+                linear-gradient(45deg, rgba(250, 112, 154, 0.8), rgba(254, 225, 64, 0.8)),
+                url('assets/images/Disaster-Recovery.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .portfolio-img-6 {
+            background: 
+                linear-gradient(45deg, rgba(168, 237, 234, 0.8), rgba(254, 214, 227, 0.8)),
+                url('assets/images/Network-Security.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .portfolio-img-7 {
+            background: 
+                linear-gradient(45deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+                url('assets/images/Development.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <nav class="glass">
+    <div class="nav-container">
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">David Kulipoe</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="cv.html" class="nav-link">CV</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+    </div>
+</nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <p>Showcasing my latest projects and successful implementations</p>
+        </div>
+    </section>
+
+    <section class="portfolio-page">
+        <div class="container">
+            <div class="portfolio-grid">
+                <!-- Tile 1 - Network Infrastructure -->
+                <div class="portfolio-item glass fade-in tilt-element">
+                    <div class="portfolio-img portfolio-img-1"></div>
+                    <div class="portfolio-overlay">
+                        <h3>Enterprise Network Overhaul</h3>
+                        <p>Complete infrastructure redesign for Fortune 500 company</p>
+                        <span class="project-tag">Network Infrastructure</span>
+                    </div>
+                </div>
+                
+                <!-- Tile 2 - Cloud Migration -->
+                <div class="portfolio-item glass fade-in tilt-element">
+                    <div class="portfolio-img portfolio-img-2"></div>
+                    <div class="portfolio-overlay">
+                        <h3>Cloud Migration Project</h3>
+                        <p>Seamless transition to AWS for financial institution</p>
+                        <span class="project-tag">Cloud Solutions</span>
+                    </div>
+                </div>
+
+                <!-- Tile 3 - Cybersecurity -->
+                <div class="portfolio-item glass fade-in tilt-element">
+                    <div class="portfolio-img portfolio-img-3"></div>
+                    <div class="portfolio-overlay">
+                        <h3>Security Framework Implementation</h3>
+                        <p>Zero-trust implementation for healthcare provider</p>
+                        <span class="project-tag">Cybersecurity</span>
+                    </div>
+                </div>
+
+                <!-- Tile 4 - Data Center -->
+                <div class="portfolio-item glass fade-in tilt-element">
+                    <div class="portfolio-img portfolio-img-4"></div>
+                    <div class="portfolio-overlay">
+                        <h3>Data Center Modernization</h3>
+                        <p>Hardware upgrade and virtualization for manufacturing firm</p>
+                        <span class="project-tag">Infrastructure</span>
+                    </div>
+                </div>
+
+                <!-- Tile 5 - Disaster Recovery -->
+                <div class="portfolio-item glass fade-in tilt-element">
+                    <div class="portfolio-img portfolio-img-5"></div>
+                    <div class="portfolio-overlay">
+                        <h3>Disaster Recovery System</h3>
+                        <p>Automated backup and recovery solution for e-commerce</p>
+                        <span class="project-tag">Cloud Solutions</span>
+                    </div>
+                </div>
+
+                <!-- Tile 6 - Network Security Audit -->
+                <div class="portfolio-item glass fade-in tilt-element">
+                    <div class="portfolio-img portfolio-img-6"></div>
+                    <div class="portfolio-overlay">
+                        <h3>Network Security Audit</h3>
+                        <p>Comprehensive security assessment for government agency</p>
+                        <span class="project-tag">Cybersecurity</span>
+                    </div>
+                </div>
+
+                <!-- Tile 7 - E-commerce Platform -->
+                <div class="portfolio-item glass fade-in tilt-element">
+                    <div class="portfolio-img portfolio-img-7"></div>
+                    <div class="portfolio-overlay">
+                        <h3>E-commerce Platform Development</h3>
+                        <p>Full-stack e-commerce solution with React frontend and Node.js backend</p>
+                        <span class="project-tag">Web Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:kulipoedavid917@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2024 David Kulipoe. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

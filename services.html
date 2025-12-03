@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Kulipoe | Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Services Page Background */
+        .services-page {
+            position: relative;
+            min-height: 100vh;
+            padding: 80px 0 2rem;
+            background: 
+                linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%),
+                url('assets/images/3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+        }
+
+        .services-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Make nav transparent to show background */
+        nav.glass {
+            background: rgba(255, 255, 255, 0.05) !important;
+            backdrop-filter: blur(20px) !important;
+        }
+
+        /* Adjust page hero padding */
+        .page-hero {
+            padding: 80px 0 40px !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="glass">
+        <div class="nav-container">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="logo">David Kulipoe</div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>My Services</h1>
+            <p>Comprehensive IT solutions tailored to your business needs</p>
+        </div>
+    </section>
+
+    <section class="services-page">
+        <div class="container services-content">
+            <div class="services-grid">
+                <div class="service-card glass fade-in tilt-element">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Network Infrastructure</h3>
+                    <p>Design and implementation of scalable, secure network solutions for enterprise environments</p>
+                    <ul>
+                        <li>Network Design & Architecture</li>
+                        <li>Wireless Solutions</li>
+                        <li>VPN & Remote Access</li>
+                        <li>Network Security</li>
+                        <li>Server Configuration</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card glass fade-in tilt-element">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Comprehensive security assessments and protection strategies to safeguard your digital assets</p>
+                    <ul>
+                        <li>Security Audits & Assessments</li>
+                        <li>Threat Detection & Prevention</li>
+                        <li>Firewall Configuration</li>
+                        <li>Incident Response</li>
+                        <li>Data Encryption</li>
+                        <li>Security Training</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass fade-in tilt-element">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Migration, deployment, and management of cloud infrastructure across multiple platforms</p>
+                    <ul>
+                        <li>AWS/Azure Migration</li>
+                        <li>Cloud Architecture Design</li>
+                        <li>Cost Optimization</li>
+                        <li>Disaster Recovery</li>
+                        <li>Containerization</li>
+                        <li>Cloud Security</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass fade-in tilt-element">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Website Development</h3>
+                    <p>Custom web applications and responsive websites built with modern technologies and frameworks</p>
+                    <ul>
+                        <li>Frontend Development</li>
+                        <li>Backend Systems</li>
+                        <li>Database Integration</li>
+                        <li>API Development</li>
+                        <li>Responsive Design</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass fade-in tilt-element">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database Management</h3>
+                    <p>Efficient database design, optimization, and maintenance for optimal performance</p>
+                    <ul>
+                        <li>Database Design & Architecture</li>
+                        <li>Performance Tuning</li>
+                        <li>Backup & Recovery</li>
+                        <li>Data Migration</li>
+                        <li>Security Implementation</li>
+                        <li>Cloud Databases</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass fade-in tilt-element">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>IT Consulting</h3>
+                    <p>Strategic technology guidance and solutions to drive business growth and efficiency</p>
+                    <ul>
+                        <li>Technology Strategy</li>
+                        <li>Digital Transformation</li>
+                        <li>System Integration</li>
+                        <li>Vendor Management</li>
+                        <li>IT Roadmapping</li>
+                        <li>Budget Planning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-section glass fade-in" style="text-align: center; padding: 3rem; margin-top: 4rem;">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Let's discuss how I can help transform your business with technology</p>
+                <a href="contact.html" class="magnetic-btn" style="margin-top: 1.5rem;">
+                    <i class="fas fa-paper-plane"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:kulipoedavid917@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2024 David Kulipoe. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
