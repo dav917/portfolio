@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Portfolio | Contact Me</title>
+    <title>David Kulipoe | Contact Me</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -41,23 +41,23 @@
 </head>
 <body>
     <nav class="glass">
-    <div class="nav-container">
-        <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="logo">David Kulipoe</div>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="services.html" class="nav-link">Services</a>
-            <a href="portfolio.html" class="nav-link">Portfolio</a>
-            <a href="skills.html" class="nav-link">Skills</a>
-            <a href="cv.html" class="nav-link">CV</a>
-            <a href="contact.html" class="nav-link">Contact</a>
+        <div class="nav-container">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="logo">David Kulipoe</div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="cv.html" class="nav-link">CV</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
         </div>
-    </div>
-</nav> 
+    </nav>
 
     <section class="page-hero">
         <div class="container">
@@ -108,26 +108,48 @@
                     </div>
                 </div>
 
+                <!-- Contact Form Container -->
                 <div class="contact-form-container glass fade-in">
                     <h3>Send Me a Message</h3>
-                    <form class="contact-form">
+                    
+                    <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Your Name" required>
+                            <input type="text" name="from_name" class="form-input" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-input" placeholder="Your Email" required>
+                            <input type="email" name="from_email" class="form-input" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Subject" required>
+                            <input type="text" name="subject" class="form-input" placeholder="Subject" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-input" placeholder="Your Message" rows="6" required></textarea>
+                            <textarea name="message" class="form-input" placeholder="Your Message" rows="6" required></textarea>
                         </div>
-                        <button type="submit" class="magnetic-btn" style="width: 100%">
+                        <button type="submit" class="magnetic-btn" style="width: 100%" id="submitBtn">
                             <i class="fas fa-paper-plane"></i> Send Message
                         </button>
                     </form>
                 </div>
+            </div>
+
+            <!-- Backup Contact Method -->
+            <noscript>
+                <div style="background: rgba(59, 130, 246, 0.1); border-radius: 10px; padding: 1.5rem; margin-top: 2rem; text-align: center;">
+                    <h4 style="color: #3b82f6; margin-bottom: 1rem;">
+                        <i class="fas fa-exclamation-triangle"></i> JavaScript Required
+                    </h4>
+                    <p>Please enable JavaScript to use the contact form, or email me directly:</p>
+                    <a href="mailto:kulipoedavid917@gmail.com" class="magnetic-btn" style="margin-top: 1rem;">
+                        <i class="fas fa-envelope"></i> Email Me Directly
+                    </a>
+                </div>
+            </noscript>
+
+            <!-- Direct Contact Info -->
+            <div style="text-align: center; margin-top: 2rem; opacity: 0.8;">
+                <p>Or contact me directly:</p>
+                <p><i class="fas fa-envelope"></i> kulipoedavid917@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +233 531 192 653</p>
             </div>
         </div>
     </section>
@@ -137,13 +159,144 @@
             <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
             <a href="#" class="social-link"><i class="fab fa-github"></i></a>
             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:kulipoedavid917@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>&copy; 2025 IT Portfolio. All rights reserved.</p>
+        <p>&copy; 2025 David Kulipoe. All rights reserved.</p>
     </footer>
 
+    <!-- ✅ FIXED EmailJS Script with CORRECT Credentials -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            console.log('🚀 David Kulipoe Contact Form - Initializing...');
+            
+            // ✅ CORRECT CREDENTIALS (FIXED!)
+            const PUBLIC_KEY = 'gsUqTJBn8q3t_jt_b';
+            const SERVICE_ID = 'service_tfuwm6i';      // ✅ CORRECT Service ID
+            const TEMPLATE_ID = 'template_7xcmy4o';    // ✅ CORRECT Template ID
+            
+            console.log('📋 Using credentials:', {
+                publicKey: PUBLIC_KEY,
+                serviceId: SERVICE_ID,
+                templateId: TEMPLATE_ID
+            });
+            
+            // Get form elements
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (!contactForm || !submitBtn) {
+                console.log('⏳ Waiting for form elements...');
+                setTimeout(initializeForm, 100);
+                return;
+            }
+            
+            initializeForm();
+            
+            function initializeForm() {
+                console.log('✅ Setting up contact form...');
+                
+                contactForm.addEventListener('submit', async function(event) {
+                    event.preventDefault();
+                    
+                    console.log('📧 Form submission started...');
+                    
+                    // Save original button state
+                    const originalBtnText = submitBtn.innerHTML;
+                    const originalBtnDisabled = submitBtn.disabled;
+                    
+                    // Show loading state
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        // Step 1: Check if EmailJS is loaded
+                        if (typeof emailjs === 'undefined') {
+                            throw new Error('EmailJS library not loaded. Check internet connection.');
+                        }
+                        
+                        // Step 2: Initialize EmailJS
+                        console.log('🔄 Initializing EmailJS...');
+                        await emailjs.init(PUBLIC_KEY);
+                        console.log('✅ EmailJS initialized successfully');
+                        
+                        // Step 3: Prepare email data
+                        const templateParams = {
+                            from_name: this.from_name.value,
+                            from_email: this.from_email.value,
+                            subject: this.subject.value,
+                            message: this.message.value
+                        };
+                        
+                        console.log('📤 Sending email with data:', templateParams);
+                        console.log('Using Service ID:', SERVICE_ID);
+                        console.log('Using Template ID:', TEMPLATE_ID);
+                        
+                        // Step 4: Send the email
+                        const response = await emailjs.send(
+                            SERVICE_ID,
+                            TEMPLATE_ID,
+                            templateParams
+                        );
+                        
+                        // Step 5: SUCCESS!
+                        console.log('🎉 Email sent successfully!', response);
+                        console.log('Status Code:', response.status);
+                        console.log('Response:', response.text);
+                        
+                        // Show success message to user
+                        alert('✅ Message sent successfully!\n\nThank you for contacting me. I will reply within 24 hours.\n\nCheck your email: kulipoedavid917@gmail.com');
+                        
+                        // Clear the form
+                        this.reset();
+                        console.log('🧹 Form cleared');
+                        
+                    } catch (error) {
+                        // Step 6: ERROR HANDLING
+                        console.error('❌ EmailJS Error Details:', error);
+                        console.error('Error Status:', error?.status);
+                        console.error('Error Text:', error?.text);
+                        
+                        // Create helpful error message
+                        let userMessage = '❌ Unable to send message automatically.\n\n';
+                        
+                        if (error?.text) {
+                            userMessage += 'Error: ' + error.text + '\n\n';
+                        }
+                        
+                        userMessage += 'Would you like to send the message using your email client instead?';
+                        
+                        // Offer mailto fallback
+                        if (confirm(userMessage)) {
+                            const subject = encodeURIComponent(this.subject.value || 'Contact from David Kulipoe Portfolio');
+                            const body = encodeURIComponent(
+                                `Name: ${this.from_name.value}\n` +
+                                `Email: ${this.from_email.value}\n\n` +
+                                `Message:\n${this.message.value}`
+                            );
+                            
+                            window.location.href = `mailto:kulipoedavid917@gmail.com?subject=${subject}&body=${body}`;
+                            console.log('📧 Mailto fallback activated');
+                        }
+                        
+                    } finally {
+                        // Step 7: Always restore button
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = originalBtnDisabled;
+                        console.log('✅ Button restored to original state');
+                    }
+                    
+                    console.log('📧 Form submission process completed');
+                });
+                
+                console.log('✅ Contact form setup complete - Ready to send emails!');
+                console.log('📍 Page will send to: kulipoedavid917@gmail.com');
+            }
+            
+        })();
+    </script>
+
+    <!-- Load your main JavaScript file -->
     <script src="js/script.js"></script>
 </body>
-
 </html>
-
