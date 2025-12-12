@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body style="padding: 20px; font-family: Arial;">
+    <h2>🚀 EmailJS Final Test</h2>
+    <button onclick="testEmail()">Click to Test EmailJS</button>
+    <div id="result" style="margin-top: 20px; padding: 10px; background: #f0f0f0;"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        async function testEmail() {
+            const result = document.getElementById('result');
+            result.innerHTML = "Testing...";
+            
+            try {
+                // Initialize
+                await emailjs.init('gsUqTJBn8q3t_jt_b');
+                result.innerHTML += "<br>✅ Initialized";
+                
+                // Send test email
+                const response = await emailjs.send('service_ttwvm61', 'template_7xcmy4o', {
+                    from_name: 'Test User',
+                    from_email: 'test@example.com',
+                    subject: 'Test from David\'s Portfolio',
+                    message: 'This is a test message from the contact form!'
+                });
+                
+                result.innerHTML += "<br>✅ Email sent successfully!";
+                result.innerHTML += "<br>Status: " + response.status;
+                alert("✅ Test passed! Check your email: kulipoedavid917@gmail.com");
+                
+            } catch (error) {
+                result.innerHTML += "<br>❌ Error: " + (error.text || error.message);
+                console.error("Full error:", error);
+                alert("❌ Error: " + error.text);
+            }
+        }
+    </script>
+</body>
+</html>

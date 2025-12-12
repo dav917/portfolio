@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Test Reply-To Feature</h2>
+    <form id="testForm">
+        <input type="email" id="testEmail" placeholder="Enter DIFFERENT email to test" required>
+        <button type="submit">Send Test</button>
+    </form>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        document.getElementById('testForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const testEmail = document.getElementById('testEmail').value;
+            
+            await emailjs.init('gsUqTJBn8q3t_jt_b');
+            
+            // Send with reply_to parameter
+            await emailjs.send('service_tfuwm6i', 'template_7xcmy4o', {
+                from_name: 'Test User',
+                from_email: testEmail,
+                reply_to: testEmail,  // Explicit Reply-To
+                subject: 'Test Reply-To Feature',
+                message: 'Please reply to this email to test if replies go to: ' + testEmail
+            });
+            
+            alert('Test sent! Check your Gmail and try to reply. It should go to: ' + testEmail);
+        });
+    </script>
+</body>
+</html>
