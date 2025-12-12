@@ -99,51 +99,28 @@ function isElementInViewport(el) {
     );
 }
 
-// Form submission handling
-document.querySelectorAll('.contact-form').forEach(form => {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const submitBtn = form.querySelector('.magnetic-btn');
-        const originalText = submitBtn.innerHTML;
-        
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
-        
-        // Simulate form submission
-        setTimeout(() => {
-            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-            submitBtn.style.background = 'linear-gradient(45deg, #10b981, #059669)';
-            
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.background = 'linear-gradient(45deg, var(--primary), var(--secondary))';
-                form.reset();
-            }, 2000);
-        }, 1500);
-    });
-});
-
 // Reduce animations on touch devices for better performance
 if ('ontouchstart' in window) {
     document.documentElement.classList.add('touch-device');
 }
 
-// Mobile Hamburger Menu with Animation
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
+// Mobile Hamburger Menu with Animation (FIXED)
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
-if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-    
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
         });
-    });
-}
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    }
+});
