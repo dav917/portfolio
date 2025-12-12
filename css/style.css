@@ -833,6 +833,15 @@ footer {
     margin: 0;
     padding: 0;
     z-index: 1001;
+
+    #hamburger {
+    position: relative;
+    z-index: 99999;
+}
+nav {
+    z-index: 9999;
+}
+
 }
 
 .hamburger span {
@@ -966,4 +975,31 @@ body {
 /* Specific fix for homepage */
 .animated-hero {
     padding-top: 80px !important;
+}
+
+/* Form Validation Styles */
+.form-input:invalid {
+    border-color: #ef4444 !important;
+}
+
+.form-input:valid {
+    border-color: #22c55e !important;
+}
+
+.form-input:focus:invalid {
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3) !important;
+}
+
+.form-input:focus:valid {
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Loading animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.fa-spinner {
+    animation: spin 1s linear infinite;
 }
